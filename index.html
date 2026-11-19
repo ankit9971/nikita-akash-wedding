@@ -795,10 +795,10 @@ body.locked .snd{display:none}
       yt=new YT.Player('ytp',{
         host:'https://www.youtube-nocookie.com',
         videoId:YT_ID, width:200, height:200,
-        playerVars:{ autoplay:0, controls:0, disablekb:1, fs:0, playsinline:1, rel:0, modestbranding:1, iv_load_policy:3 },
+        playerVars:{ autoplay:0, start:25, controls:0, disablekb:1, fs:0, playsinline:1, rel:0, modestbranding:1, iv_load_policy:3 },
         events:{
           onReady:function(){ ytReady=true; try{ yt.setVolume(Math.round(ytVol*100)); }catch(e){} if(ytWant){ try{ yt.playVideo(); }catch(e){} } },
-          onStateChange:function(e){ if(e.data===0){ try{ yt.seekTo(0); yt.playVideo(); }catch(x){} } }
+          onStateChange:function(e){ if(e.data===0){ try{ yt.seekTo(25); yt.playVideo(); }catch(x){} } }
         }
       });
     }catch(e){}
